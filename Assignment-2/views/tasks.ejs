@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul>
+        <% tasks.forEach(task => { %>
+            <li>
+                <%= task.id %>: <%= task.desc %> - 
+                <strong><%= task.completed ? "✔ Completed" : "❌ Pending" %></strong>
+            </li>
+        <% }); %>
+    </ul>
+
+    <h2>Add New Task</h2>
+    <form action="/add-task" method="POST">
+        <input type="text" name="desc" placeholder="Task description" required>
+        <button type="submit">Add Task</button>
+    </form>
+</body>
+</html>
+            

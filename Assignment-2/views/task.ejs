@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+</head>
+<style>
+    .h1{
+        color: black;
+        text-align: center;
+        
+    }
+</style>
+<body>
+   <h1>Daily Tasks</h1> 
+   <ul>
+    <% tasks.forEach(task => { %>
+        <li><%= task.title %></li>
+    <% }); %>
+</ul>
+
+    <form action = "/addTask" method="post">
+        <input type = "text" name="task" placeholder="Add a new task" required>
+        <button type = "submit">Add Task</button>
+    </form>
+
+
+</body>
+</html>
